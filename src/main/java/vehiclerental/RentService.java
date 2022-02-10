@@ -52,16 +52,13 @@ public class RentService {
 
     private boolean isRentingValid(User user, Rentable rentable, LocalTime time) {
 
-        boolean result = true;
         if (rentable.getRentingTime() != null) {
-            result = false;
             throw new IllegalStateException("Already renting");
         }
         if (user.getBalance() < rentable.calculateSumPrice(MAXIMUM_RENT_TIME_IN_MINUTES)) {
-            result = false;
             throw new IllegalStateException("Not enough user balance");
         }
-        return result;
+        return true;
     }
 
     public void closeRent(Rentable rentable, int minutes) {

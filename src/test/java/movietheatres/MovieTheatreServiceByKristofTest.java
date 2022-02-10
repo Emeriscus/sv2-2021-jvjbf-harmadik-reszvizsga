@@ -1,6 +1,5 @@
 package movietheatres;
 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,13 +10,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MovieTheatreServiceTest {
+class MovieTheatreServiceByKristofTest {
 
-    MovieTheatreService mvs;
+    MovieTheatreServiceByKristof mvs;
 
     @BeforeEach
     void init() {
-        mvs = new MovieTheatreService();
+        mvs = new MovieTheatreServiceByKristof();
         mvs.readFromFile(Path.of("src/test/resources/moviesintheaters.txt"));
 
     }
